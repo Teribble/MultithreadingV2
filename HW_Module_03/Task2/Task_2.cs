@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HW_Module_03
 {
-    public partial class Task2 : Form
+    public partial class Task_2 : Form
     {
         private List<ProgressBar> _progressBars;
 
@@ -33,7 +33,7 @@ namespace HW_Module_03
         #endregion
 
 
-        public Task2()
+        public Task_2()
         {
             InitializeComponent();
 
@@ -95,41 +95,11 @@ namespace HW_Module_03
                         else if (i == 100 && place == 5)
                             listBox1.Invoke(() => listBox1.Items.Add($"{place++} место: {n.Name} Средняя скорость: {_bufferProgressBar5.Average()} Максимальная скорость: {_bufferProgressBar5.Max()}"));
 
+                        int speed = new Random().Next(10, new Random().Next(20, 300));
 
-                        int value = new Random().Next(10, 300);
+                        Speed(bufferIndex, speed);
 
-                        if (bufferIndex == 0)
-                        {
-                            label7.Invoke(() => label7.Text = (value % 100).ToString() + "км/ч");
-
-                            _bufferProgressBar1.Add(value % 100);
-                        }
-                        else if (bufferIndex == 1)
-                        {
-                            label8.Invoke(() => label8.Text = (value % 100).ToString() + "км/ч");
-
-                            _bufferProgressBar2.Add(value % 100);
-                        }
-                        else if (bufferIndex == 2)
-                        {
-                            label9.Invoke(() => label9.Text = (value % 100).ToString() + "км/ч");
-
-                            _bufferProgressBar3.Add(value % 100);
-                        }
-                        else if (bufferIndex == 3)
-                        {
-                            label10.Invoke(() => label10.Text = (value % 100).ToString() + "км/ч");
-
-                            _bufferProgressBar4.Add(value % 100);
-                        }
-                        else if (bufferIndex == 4)
-                        {
-                            label11.Invoke(() => label11.Text = (value % 100).ToString() + "км/ч");
-
-                            _bufferProgressBar5.Add(value % 100);
-                        }
-
-                        Thread.Sleep(value);
+                        Thread.Sleep(speed);
 
                         n.Invoke(() => n.Increment(1));
 
@@ -160,8 +130,10 @@ namespace HW_Module_03
             _progressBars.Add(progressBar5);
         }
 
-        private void OnButton2Click(object sender, EventArgs e)
+        private void OnButton2Click(object? sender, EventArgs? e)
         {
+            label13.Visible = true;
+
             flag = false;
 
             Task.Run(() =>
@@ -169,9 +141,50 @@ namespace HW_Module_03
                 Thread.Sleep(2000);
 
                 button3.Invoke(() => button3.Enabled = true);
-            });
 
-            label12.Visible = false;
+                label12.Invoke(() => label12.Visible = false);
+
+                label13.Invoke(() => label13.Visible = false);
+            });
+        }
+
+        private void Vinner(int i, int place)
+        {
+            
+        }
+
+        private void Speed(int bufferIndex, int value)
+        {
+            if (bufferIndex == 0)
+            {
+                label7.Invoke(() => label7.Text = (value % 100).ToString() + "км/ч");
+
+                _bufferProgressBar1.Add(value % 100);
+            }
+            else if (bufferIndex == 1)
+            {
+                label8.Invoke(() => label8.Text = (value % 100).ToString() + "км/ч");
+
+                _bufferProgressBar2.Add(value % 100);
+            }
+            else if (bufferIndex == 2)
+            {
+                label9.Invoke(() => label9.Text = (value % 100).ToString() + "км/ч");
+
+                _bufferProgressBar3.Add(value % 100);
+            }
+            else if (bufferIndex == 3)
+            {
+                label10.Invoke(() => label10.Text = (value % 100).ToString() + "км/ч");
+
+                _bufferProgressBar4.Add(value % 100);
+            }
+            else if (bufferIndex == 4)
+            {
+                label11.Invoke(() => label11.Text = (value % 100).ToString() + "км/ч");
+
+                _bufferProgressBar5.Add(value % 100);
+            }
         }
     }
 }

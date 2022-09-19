@@ -1,6 +1,6 @@
 ﻿namespace HW_Module_03
 {
-    partial class Task2
+    partial class Task_2
     {
         /// <summary>
         /// Required designer variable.
@@ -52,6 +52,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -248,6 +249,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.button1);
@@ -288,6 +290,17 @@
             this.label12.Text = "Что-бы покинуть скачки, нужно их завершить";
             this.label12.Visible = false;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.IndianRed;
+            this.label13.Location = new System.Drawing.Point(65, 118);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 15);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Завершаем";
+            this.label13.Visible = false;
+            // 
             // Task2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -305,6 +318,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +351,6 @@
         private Button button3;
         private Button button2;
         private Label label12;
+        private Label label13;
     }
 }

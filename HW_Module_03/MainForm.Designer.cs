@@ -67,6 +67,7 @@
             this.button3.TabStop = false;
             this.button3.Text = "Задание третье";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.OnButton3Click);
             // 
             // button4
             // 
@@ -77,6 +78,7 @@
             this.button4.TabStop = false;
             this.button4.Text = "Задание четвертое";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.OnButton4Click);
             // 
             // button5
             // 
@@ -87,6 +89,7 @@
             this.button5.TabStop = false;
             this.button5.Text = "Задание пятое";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.OnButton5Click);
             // 
             // MainForm
             // 
